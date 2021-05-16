@@ -4,8 +4,6 @@ const { userService, referralService } = require('../services');
 
 const createUser = catchAsync(async (req, res) => {
   const user = await userService.createUser(req.body);
-  await referralService.createReferral(user.id);
-  await referralService.confirmReferral(req.body);
   res.status(httpStatus.CREATED).send(user);
 });
 

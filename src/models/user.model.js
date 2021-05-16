@@ -36,7 +36,12 @@ const userSchema = mongoose.Schema(
       private: true,
     },
     referralID: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Referral',
+    },
+    referralCount: {
       type: Number,
+      default: 0,
     },
     role: {
       type: String,
